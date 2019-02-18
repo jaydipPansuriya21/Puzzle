@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		
+button{
+	width: 60px;
+	height: 60px;
+}
+
+
+
+	</style>
+</head>
+<body>
+
+<button value=" 1 " id="1" onclick="submit('1')"> "  "</button>
+<button value=" 2 " id="2" onclick="submit('2')"> "  "</button>
+<button value=" 3 " id="3" onclick="submit('3')"> "  "</button><br><br>
+
+<button value=" 4 " id="4" onclick="submit('4')"> "  "</button>
+<button value=" 5 " id="5" onclick="submit('5')"> "  "</button>
+<button value=" 6 " id="6" onclick="submit('6')"> "  "</button><br><br>
+
+<button value=" 7 " id="7" onclick="submit('7')"> "  "</button>
+<button value=" 8 " id="8" onclick="submit('8')"> "  "</button>
+<button value=" 9 " id="9" onclick="submit('9')"> "  "</button><br><br>
+
+<script type="text/javascript">
+
+
+var user = '';
+var comp = '';
+var state = true;
+var Remain = [1,2,3,4,5,6,7,8,9];
+var ComputerSelector ;
+var pair = ['123' , '147' , '159' , '258' ,'456' ,  '357' , '369' , '789' ];
+	function submit(value) {
+
+// ComputerSelector = Remain[0];
+
+// console.log(ComputerSelector);
+
+
+
+document.getElementById(value).innerHTML= " # ";		
+document.getElementById(value).disabled = true;
+Remain.splice(value-1,1);
+/*var St = 'jaydip';
+    var Str = St.split("");
+	var re = Str.reverse();
+	var joi = re.join("");
+console.log(joi);
+console.log(St.split("").reverse().join(""));
+
+}*/
+
+
+
+   
+  
+//  console.log(value);
+
+var TakeIni = '';
+
+	var count = 0 ; 
+		user  += value;
+  
+   out :for(var i=0 ;i<pair.length;i++){
+     for (var j = 0; j < 2 ; j++) {
+     	for(var p = j+1; p < 3 ; p++){
+         var tarSub = pair[i].charAt(j) + pair[i].charAt(p);
+     	
+  // console.log( " tarSub " + tarSub);
+     	for(var k=0;k<user.length-1;k++){
+          for(var l=k+1;l<user.length;l++){
+          	  var val = user.charAt(k) + user.charAt(l);
+          	//console.log( " valueSubString " + val);
+          	//console.log( " ReverseSubString " + reverseSt(tarSub));
+          	if(val == tarSub  || val==reverseSt(tarSub)){
+            	
+            pair[i] = pair[i].replace(val.charAt(0) , '');
+            pair[i] = pair[i].replace(val.charAt(1) , '');
+            comp += pair[i];                       
+ 
+
+
+             /*var Temp = pair[i];
+                Temp = Temp.replace(val.charAt(0) , '');
+                comp +=  Temp.replace(val.charAt(1) , '');
+            	state  = false;
+            	break out;*/
+            
+          	}
+     	
+     	}
+             	
+     	}
+     }
+  }
+}
+ 
+
+
+if(state){
+ComputerSelector = Remain[Math.floor(Math.random()*Remain.length)];
+console.log("Index = "+Math.floor(Math.random()*Remain.length));
+comp += ComputerSelector;
+state  = true;
+}
+else{
+ComputerSelector = comp.charAt(comp.length-1);
+}
+console.log( " ComputerSelector  " + ComputerSelector);
+console.log( " machin select  " + comp);
+console.log( " user select " + user); 
+console.log("Remain = " + Remain);
+Remain.splice(ComputerSelector-1,1);
+document.getElementById(ComputerSelector).innerHTML= " $ ";		
+document.getElementById(ComputerSelector).disabled = true;
+
+
+}
+function reverseSt(str) {
+	return str.split("").reverse().join("");
+	// body...
+}
+
+
+
+
+
+
+</script>
+</body>
+</script>
+</html>
