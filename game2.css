@@ -1,0 +1,39 @@
+#div1{
+
+
+}
+button{
+	width: 100px;
+	height: 100px;
+	background-color: #D39696;
+	color:#E9A5E2;
+	font-size: xx-large;
+
+}
+#X{
+	float: left;
+	margin-left: 20px;
+	padding: 10px;
+    border : 2px solid black;
+    border-radius: 20px;
+	background-color: green;
+}
+#Y{
+	float: right;
+	margin-right: 20px;
+	padding: 10px;
+    border : 2px solid black;
+    border-radius: 20px;
+	background-color: green;
+}
+#btn{
+    width: 150px;
+	height: 80px;
+	margin-right: 20px;
+	padding: 10px;
+    border : 2px solid black;
+    border-radius: 20px;
+	background-color: green;
+
+
+}
