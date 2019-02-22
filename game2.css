@@ -5,8 +5,8 @@
 button{
 	width: 100px;
 	height: 100px;
-	background-color: #D39696;
-	color:#E9A5E2;
+	background-color: rgba(37,23,37,0.5);
+	color:white;
 	font-size: xx-large;
 
 }
@@ -16,7 +16,7 @@ button{
 	padding: 10px;
     border : 2px solid black;
     border-radius: 20px;
-	background-color: green;
+	background-color: rgba(255,0,0,0.7);
 }
 #Y{
 	float: right;
@@ -24,7 +24,7 @@ button{
 	padding: 10px;
     border : 2px solid black;
     border-radius: 20px;
-	background-color: green;
+	background-color: white;
 }
 #btn{
     width: 150px;
@@ -33,7 +33,15 @@ button{
 	padding: 10px;
     border : 2px solid black;
     border-radius: 20px;
-	background-color: green;
+	background-color: rgba(0,28,0,0.8);
+	color: white;
 
 
+}
+#result{
+	
+	color: white;
+}
+#body{
+	background-color: #1BD6B9;
 }
