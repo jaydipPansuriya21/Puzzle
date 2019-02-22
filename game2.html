@@ -15,21 +15,20 @@ button{
 </head>
 <body>
 
-<button value=" 1 " id="1" onclick="submit('1')"> "  "</button>
-<button value=" 2 " id="2" onclick="submit('2')"> "  "</button>
-<button value=" 3 " id="3" onclick="submit('3')"> "  "</button><br><br>
+<button value=" 1 " id="1" onclick="submit(1)">  1  </button>
+<button value=" 2 " id="2" onclick="submit(2)">  2  </button>
+<button value=" 3 " id="3" onclick="submit(3)">  3  </button><br><br>
 
-<button value=" 4 " id="4" onclick="submit('4')"> "  "</button>
-<button value=" 5 " id="5" onclick="submit('5')"> "  "</button>
-<button value=" 6 " id="6" onclick="submit('6')"> "  "</button><br><br>
+<button value=" 4 " id="4" onclick="submit(4)">  4  </button>
+<button value=" 5 " id="5" onclick="submit(5)">  5  </button>
+<button value=" 6 " id="6" onclick="submit(6)">  6  </button><br><br>
 
-<button value=" 7 " id="7" onclick="submit('7')"> "  "</button>
-<button value=" 8 " id="8" onclick="submit('8')"> "  "</button>
-<button value=" 9 " id="9" onclick="submit('9')"> "  "</button><br><br>
+<button value=" 7 " id="7" onclick="submit(7)">  7  </button>
+<button value=" 8 " id="8" onclick="submit(8)">  8  </button>
+<button value=" 9 " id="9" onclick="submit(9)">  9  </button><br><br>
 
 <script type="text/javascript">
 var pair = [123 , 147 , 159 , 258 ,456 , 357 , 369 , 789];
-var Remain = [1,2,3,4,5,6,7,8,9];
 var userX = [];
 var userY = [];
 var state = true;
@@ -55,13 +54,53 @@ state = true;
  
 function getItem(player,value){
 
-if(player=="x")
+if(player=="x"){
 userX.push(value);
-else 
+userX.sort();
+if(checkForResult(userX))
+{
+  console.log("user X win..  ");
+}
+}
+else {
 userY.push(value);
+userY.sort();
+if(checkForResult(userY))
+{
+  console.log("user Y win..  ");
+}
+}
 console.log(userX);
-
 console.log(userY);
+}
+function checkForResult(player){
+  var temp ;
+     for(var i=0;i<player.length-2;i++){
+          temp = player[i];
+            for(var j=i+1;j<player.length-1;j++){
+                       temp *=10; 
+                       temp += player[j];
+                     for(var l=j+1;l<player.length;l++){
+                       temp *=10; 
+                       temp += player[l];
+                       for(var k = 0;k<pair.length;k++){
+                        if(pair[k] == temp)
+                          return true;
+                       }
+
+                      
+                       temp -= player[l];
+                      temp /=10; 
+
+                     }
+                        temp -= player[j];
+                        temp /=10;
+                     }
+                       temp -= player[i];
+                       temp /=10; 
+                  }  
+                  return false;
+
 }
 
 
