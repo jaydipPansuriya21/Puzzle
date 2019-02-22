@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		
+button{
+	width: 60px;
+	height: 60px;
+}
+
+
+
+	</style>
+</head>
+<body>
+
+<button value=" 1 " id="1" onclick="submit('1')"> "  "</button>
+<button value=" 2 " id="2" onclick="submit('2')"> "  "</button>
+<button value=" 3 " id="3" onclick="submit('3')"> "  "</button><br><br>
+
+<button value=" 4 " id="4" onclick="submit('4')"> "  "</button>
+<button value=" 5 " id="5" onclick="submit('5')"> "  "</button>
+<button value=" 6 " id="6" onclick="submit('6')"> "  "</button><br><br>
+
+<button value=" 7 " id="7" onclick="submit('7')"> "  "</button>
+<button value=" 8 " id="8" onclick="submit('8')"> "  "</button>
+<button value=" 9 " id="9" onclick="submit('9')"> "  "</button><br><br>
+
+<script type="text/javascript">
+var pair = [123 , 147 , 159 , 258 ,456 , 357 , 369 , 789];
+var Remain = [1,2,3,4,5,6,7,8,9];
+var userX = [];
+var userY = [];
+var state = true;
+
+var ComputerSelector ;
+
+	function submit(value) {
+if(state){
+document.getElementById(value).innerHTML= " X ";		
+document.getElementById(value).disabled = true;
+getItem("x", value);
+state = false;
+}
+else
+{
+document.getElementById(value).innerHTML= " O ";    
+document.getElementById(value).disabled = true;
+getItem("o", value);
+state = true;
+}
+
+}
+ 
+function getItem(player,value){
+
+if(player=="x")
+userX.push(value);
+else 
+userY.push(value);
+console.log(userX);
+
+console.log(userY);
+}
+
+
+
+
+</script>
+</body>
+</script>
+</html>
